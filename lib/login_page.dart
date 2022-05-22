@@ -15,41 +15,60 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:   [
-              const SizedBox(
-                height: 200,
-                child: FlutterLogo(),
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  hintText: "Email"
+          child: SingleChildScrollView(
+            reverse: true,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children:   [
+                const SizedBox(height: 70),
+                const SizedBox(
+                  height: 150,
+                  child: FlutterLogo(),
                 ),
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                const SizedBox(height: 100),
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    labelText:"Email"
                   ),
-                  hintText: "Password"
                 ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 16),
-            ],
+                const SizedBox(height: 16),
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    labelText: "Password"
+                  ),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 16),
+                ButtonBar(
+                  children: [
+                    TextButton(
+                      child: Text("Cancel"),
+                      onPressed: () {},
+                    ),
+                    ElevatedButton(
+                      child: Text("Submit"),
+                      onPressed: () {},
+                    ),
+                    
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
