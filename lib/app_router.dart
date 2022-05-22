@@ -9,6 +9,7 @@ import 'login_page.dart';
 class AppRouter extends RouterDelegate 
   with ChangeNotifier,PopNavigatorRouterDelegateMixin{
 
+  @override
   final GlobalKey<NavigatorState> navigatorKey;
   final AppStateManager appStateManager;
 

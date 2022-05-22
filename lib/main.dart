@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    super.initState();
     _appRouter = AppRouter(
       appStateManager: _appStateManager,
     );
@@ -35,6 +36,17 @@ class _MyAppState extends State<MyApp> {
           create: (context) => AppStateManager(),
         ),
       ],
+      child: Consumer<AppStateManager>(
+        builder: (context, appStateManager, child) {
+          return MaterialApp(
+            title: 'SJD DOCSTORE',
+            home: Router(
+              routerDelegate: _appRouter,
+              backButtonDispatcher: RootBackButtonDispatcher(),
+            ),
+          );
+        },
+      ),
     );
   }
 }
