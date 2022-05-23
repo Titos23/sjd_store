@@ -7,6 +7,7 @@ class LoginPage extends StatefulWidget {
     return const MaterialPage(
       key: ValueKey(LoginPage),
       child: LoginPage(),
+      name: "/login"
     );
   }
 
@@ -29,12 +30,11 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,
               children:   [
-                const SizedBox(height: 70),
-                const SizedBox(
-                  height: 150,
-                  child: FlutterLogo(),
+                const SizedBox(height: 10),
+                const FlutterLogo(
+                  size: 100,
                 ),
-                const SizedBox(height: 100),
+                const SizedBox(height: 50),
                 TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -57,11 +57,11 @@ class _LoginPageState extends State<LoginPage> {
                 ButtonBar(
                   children: [
                     TextButton(
-                      child: Text("Cancel"),
+                      child: const Text("Cancel"),
                       onPressed: () {},
                     ),
                     ElevatedButton(
-                      child: Text("Submit"),
+                      child: const Text("Submit"),
                       onPressed: () {},
                     ),
                     
