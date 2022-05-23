@@ -37,6 +37,7 @@ class AppRouter extends RouterDelegate
     
     return Navigator(
       key: navigatorKey,
+      onPopPage: _handlePop,
       pages: [
         if (!appStateManager.isLogin) LoginPage.page()
       ],
@@ -45,6 +46,12 @@ class AppRouter extends RouterDelegate
   }
   
   @override
-  Future<void> setNewRoutePath(configuration) async => null;
+  Future<void> setNewRoutePath(configuration) async => () {};
   
+  
+  bool _handlePop(Route<dynamic> route,result) {
+    return false;
+  }
+  
+
 }
