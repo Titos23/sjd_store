@@ -7,7 +7,7 @@ import 'package:store/app_state_manager.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-   static MaterialPage page() {
+  static MaterialPage page() {
     return const MaterialPage(
       key: ValueKey(LoginPage),
       child: LoginPage(),
@@ -87,8 +87,10 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       ElevatedButton(
                         child: const Text("Submit"),
-                        onPressed: Provider.of<AppStateManager>(context, listen: false)
-                        .login(mail: _emailController.Text, pass: _passController.Text),
+                        onPressed: () {
+                          Provider.of<AppStateManager>(context, listen: false)
+                        .login(mail: _emailController.text, pass: _passController.text);
+                        }
                       ),
                       
                     ],

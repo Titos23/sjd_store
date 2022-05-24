@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store/home_screen.dart';
 
 import 'app_state_manager.dart';
 import 'login_page.dart';
@@ -39,7 +40,8 @@ class AppRouter extends RouterDelegate
       key: navigatorKey,
       onPopPage: _handlePop,
       pages: [
-        if (!appStateManager.isLogin) LoginPage.page()
+        if (!appStateManager.isLogin) LoginPage.page() else HomePage.page(),
+        
       ],
     );
     
