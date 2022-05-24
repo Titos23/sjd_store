@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:store/app_state_manager.dart';
+import 'package:store/models/app_state_manager.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:store/firebase_options.dart';
 
-import 'app_router.dart';
+import 'navigation/app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

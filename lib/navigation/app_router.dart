@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:store/home_screen.dart';
 
-import 'app_state_manager.dart';
-import 'login_page.dart';
+import '../models/app_state_manager.dart';
+import '../screens/login_page.dart';
+import '../screens/home_screen.dart';
 
 /* This is the main router of the app.
   It is responsible for the navigation of the application
