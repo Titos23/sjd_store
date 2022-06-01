@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
 class AppStateManager extends ChangeNotifier{
 
-  bool _isLogin = false;
-  bool get isLogin => _isLogin;
+  bool? _isLogin;
+  bool? get isLogin => _isLogin;
 
   Future<void> init() async{
 
@@ -19,8 +20,8 @@ class AppStateManager extends ChangeNotifier{
       notifyListeners();
     });
   } 
-  
-  login({required String mail,required pass}) async {
+
+  login(BuildContext context,{required String mail,required pass, }) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: mail,
@@ -31,11 +32,25 @@ class AppStateManager extends ChangeNotifier{
 
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found for that email.');
+        return ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("The username entered is not found"),
+            duration: Duration(seconds: 2),
+          )
+        );
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
+        return ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("The password is not correct"),
+            duration: Duration(seconds: 2),
+          )
+        );
       }
     }
+  }
+
+  signout () async {
+    await FirebaseAuth.instance.signOut();
   }
 
 }

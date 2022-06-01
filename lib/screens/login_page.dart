@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: const Text("Submit"),
                         onPressed: () {
                           Provider.of<AppStateManager>(context, listen: false)
-                        .login(mail: _emailController.text, pass: _passController.text);
+                        .login(context,mail: _emailController.text, pass: _passController.text);
                         }
                       ),
                       

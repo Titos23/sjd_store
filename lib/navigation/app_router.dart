@@ -40,7 +40,7 @@ class AppRouter extends RouterDelegate
       key: navigatorKey,
       onPopPage: _handlePop,
       pages: [
-        if (!appStateManager.isLogin) LoginPage.page() else HomePage.page(),
+        if (appStateManager.isLogin == false) LoginPage.page() else HomePage.page(),
         
       ],
     );
