@@ -24,7 +24,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -44,23 +47,14 @@ class DefaultFirebaseOptions {
     projectId: 'sjd-store-app',
     authDomain: 'sjd-store-app.firebaseapp.com',
     storageBucket: 'sjd-store-app.appspot.com',
+    measurementId: 'G-YVLLX4H0TC',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA73siotC5rVYiLApP1a8J01pM9eMW5xsA',
-    appId: '1:1079869642904:android:384fe515960786fff618ed',
+    appId: '1:1079869642904:android:c79fe1529dfd80c4f618ed',
     messagingSenderId: '1079869642904',
     projectId: 'sjd-store-app',
     storageBucket: 'sjd-store-app.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDhvuxuQn7yy3DzOL8v5z3HDHSK4ru-2PI',
-    appId: '1:1079869642904:ios:3f1179f34ed43c72f618ed',
-    messagingSenderId: '1079869642904',
-    projectId: 'sjd-store-app',
-    storageBucket: 'sjd-store-app.appspot.com',
-    iosClientId: '1079869642904-lquv3r60ledhe8g5pojh1vlhr7uo9p8v.apps.googleusercontent.com',
-    iosBundleId: 'com.sjd-store.app',
   );
 }
